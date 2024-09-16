@@ -7,12 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-const val  KEY_RESULT_IMC = "ResultActivity.KEY_IMC"
+const val KEY_RESULT_IMC = "ResultActivity.KEY_IMC"
 
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_result)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -27,19 +26,27 @@ class ResultActivity : AppCompatActivity() {
         tvResult.text = result.toString()
 
         var classificacao: String? = null
+        var corResultado: Int = 0
 
-        if (result <= 18.5f){
-            classificacao = "Magreza"
-        } else if (result > 18.5f && result <= 24.9f){
-            classificacao = "Normal"
-        } else if (result > 25f && result <= 29.9f){
-            classificacao = "Sobrepeso"
-        } else if (result > 30f && result <= 39.9f){
-            classificacao = "Obesidade"
+        if (result <= 18.5f) {
+            classificacao = "MAGREZA"
+            corResultado = R.color.blue
+        } else if (result > 18.5f && result <= 24.99f) {
+            classificacao = "NORMAL"
+            corResultado = R.color.green
+        } else if (result > 25.00f && result <= 29.99f) {
+            classificacao = "SOBREPESO"
+            corResultado = R.color.red_light
+        } else if (result > 30.00f && result <= 39.99f) {
+            classificacao = "OBESIDADE"
+            corResultado = R.color.orange_red
         } else {
-            classificacao = "Obesidade Grave"
+            classificacao = "OBESIDADE GRAVE"
+            corResultado = R.color.super_red
         }
 
         tvClassificacao.text = classificacao
+        tvClassificacao.setTextColor(getColor(corResultado))
+
     }
 }

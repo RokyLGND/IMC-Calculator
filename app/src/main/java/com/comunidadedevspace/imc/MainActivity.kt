@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             val pesoStr: String = edtPeso.text.toString()
             val alturaStr: String = edtAltura.text.toString()
 
-            if (pesoStr == "" || alturaStr ==""){
+            if (pesoStr == "" || alturaStr == "") {
 
                 Snackbar
                     .make(
@@ -39,12 +39,6 @@ class MainActivity : AppCompatActivity() {
 
                 val alturaQ2 = altura * altura
                 val resultado = peso / alturaQ2
-
-                // Navegar para a próxima tela
-                // Criar o layout da próxima tela
-                // Passar dados(resultado) para a próxima tela
-
-                //Intent - Classe do próprio Android
 
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(KEY_RESULT_IMC, resultado)
