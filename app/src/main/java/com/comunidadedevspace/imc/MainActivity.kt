@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra(KEY_RESULT_IMC, resultado)
                 startActivity(intent)
 
-
                 println("Roky acao do botao " + resultado)
             }
 
