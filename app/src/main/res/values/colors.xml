@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="primary_400">#031c51</color>
+    <color name="primary_900">#4a5772</color>
+    <color name="button">#021640</color>
+    <color name="blue">#4974a5</color>
+    <color name="green">#169900</color>
+    <color name="red_light">#ff526f</color>
+    <color name="orange">#ff6a38</color>
+    <color name="orange_red">#ff4747</color>
+    <color name="super_red">#ff0000</color>
+
+   <!--//#fff000 é o código da cor amarela do meu canal o degradê ideal seria com a cor #fff666
+    #031c51  é o código da cor azul da meu canal o degradê ideal seria com a cor #354973 -->
 </resources>
